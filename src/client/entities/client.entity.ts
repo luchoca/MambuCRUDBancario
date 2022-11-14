@@ -56,16 +56,11 @@ export class Client {
   // @Column()
   // groupKeys: any[];
 
-  // @Column()
-  // addresses: Address[];
   @ManyToMany(()=>Address,(address)=>address.client)
   @JoinTable({name:"client_address"})
   address: Address[];
 
-  // @Column()
-  // idDocuments: IdDocument[];
+  @ManyToMany(()=>IdDocument,(iddocument)=>iddocument.client)
+  @JoinTable({name:"client_iddocument"})
+  iddocument: IdDocument[];
 }
-
-// @ManyToMany(()=>ComicSQL,(comic)=>comic.heroes)
-// @JoinTable({name:"heroe_comic"})
-// comics: ComicSQL[];

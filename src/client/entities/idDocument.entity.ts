@@ -1,4 +1,5 @@
 import { Entity, Column, PrimaryGeneratedColumn, ManyToMany } from 'typeorm';
+import { Client } from './client.entity';
 
 
 @Entity()
@@ -21,5 +22,8 @@ export class IdDocument {
 
   @Column()
   indexInList: number;
+
+  @ManyToMany(()=>Client,(client)=>client.iddocument)
+  client: Client[];
   
 }

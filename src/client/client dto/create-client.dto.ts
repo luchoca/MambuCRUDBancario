@@ -70,9 +70,11 @@ export class CreateClientDto {
   @IsInt()
   groupLoanCycle: number;
 
-  // @MinLength(1)
+  @IsArray()
+  @MinLength(1)
   addresses: Address[];
   
-  // @MinLength(1)
+  @IsArray()
+  @MinLength(1)
   idDocuments: IdDocument[];
 }
